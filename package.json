@@ -1,15 +1,21 @@
 {
   "name": "node-example",
+  "type": "module",
   "version": "1.0.0",
   "description": "Learn node",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "rollup -c"
   },
   "author": "Illia Butsenko",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.9.2"
   }
 }

@@ -1,9 +1,7 @@
-console.log("Hello, World!");
-const _ = require('lodash');
+import { camelCase } from "lodash-es";
 
-const myArray = [1, 2, 3, 4, 5];
+let str = "Hello World";
 
-//In this example, _.tail function is used to obtain all elements of the array except the first one
-const elementsExceptFirst = _.tail(myArray);
+str = camelCase(str);
 
-console.log(elementsExceptFirst);
+console.log(str);
