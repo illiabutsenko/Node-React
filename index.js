@@ -1,5 +1,9 @@
-import { camelCase } from "lodash-es";
+async function fetchData() {
+  const response = await fetch("https://api.example.com/data");
+  const data = await response.json();
+  return data;
+}
 
-let str = "Hello World";
-str = camelCase(str);
-console.log(str);
+fetchData()
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
