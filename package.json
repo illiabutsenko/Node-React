@@ -1,26 +1,32 @@
 {
   "name": "node-example",
+  "type": "module",
   "version": "1.0.0",
   "description": "Learn node",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
-    "test": "jest",
-    "start": "node index.js",
-    "build": "rollup -c",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write ."
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/bundle.js",
+    "build": "rollup -c -w",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write src"
   },
   "author": "Illia Butsenko",
   "license": "ISC",
   "dependencies": {
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.7",
     "@babel/preset-env": "^7.23.7",
+    "@babel/preset-react": "^7.23.3",
     "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
