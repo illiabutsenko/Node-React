@@ -10,7 +10,7 @@ export default {
     format: "iife",
   },
   plugins: [
-    nodeResolve(),
+    nodeResolve({ extensions: [".js", ".jsx"] }),
     babel({ babelHelpers: "bundled" }),
     commonjs(),
     replace({
