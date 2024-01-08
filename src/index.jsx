@@ -1,19 +1,24 @@
 import ReactDOM from "react-dom/client";
-import Counter from "./components/Counter";
-import Color from "./components/Color";
-import TemperatureConverter from "./components/TemperatureConverter";
+import React, { useState } from 'react';
 
-function Welcome(props) {
-  return <h1>¡Hola, {props.name}!</h1>;
+function MyComponent() {
+  const [buttonText, set] = useState("Натисни мене");
+
+  const changeButtonText = () => {
+    set("Кнопку натиснуто");
+  };
+  
+  return (
+    <div>
+      <button onClick={changeButtonText}>{buttonText}</button>
+    </div>
+  );
 }
 
 function App() {
   return (
     <div>
-      <Welcome name="Illia" />
-      <Color />
-      <Counter />
-      <TemperatureConverter />
+      <MyComponent />
     </div>
   );
 }
