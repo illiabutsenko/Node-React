@@ -1,24 +1,23 @@
 import ReactDOM from "react-dom/client";
-import React, { useState } from 'react';
+import WelcomeComponent from "./components/WelcomeComponent";
+import ErrorComponent from "./components/ErrorComponent";
+import UserProfile from "./components/UserProfile";
 
-function MyComponent() {
-  const [buttonText, set] = useState("Натисни мене");
+const user = {
+  isLoggedIn: true,
+  name: "Danny",
+};
 
-  const changeButtonText = () => {
-    set("Кнопку натиснуто");
-  };
-  
-  return (
-    <div>
-      <button onClick={changeButtonText}>{buttonText}</button>
-    </div>
-  );
-}
+const error = {
+  message: "Something went wrong",
+};
 
 function App() {
   return (
     <div>
-      <MyComponent />
+      <WelcomeComponent user={user} />
+      <ErrorComponent error={error} />
+      <UserProfile user={user} />
     </div>
   );
 }
