@@ -1,10 +1,12 @@
 import ReactDOM from "react-dom/client";
-import Counter from "./components/Counter";
+import Joke from "./components/Joke";
+import Describe from "./components/Describe";
 
 function App() {
   return (
     <div>
-      <Counter />
+      <Joke />
+      <Describe />
     </div>
   );
 }
