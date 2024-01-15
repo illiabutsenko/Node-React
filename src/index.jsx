@@ -1,12 +1,10 @@
 import ReactDOM from "react-dom/client";
-import Joke from "./components/Joke";
-import Describe from "./components/Describe";
+import UserInput from "./components/UserInput";
 
 function App() {
   return (
     <div>
-      <Joke />
-      <Describe />
+      <UserInput />
     </div>
   );
 }
