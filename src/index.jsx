@@ -1,10 +1,12 @@
 import ReactDOM from "react-dom/client";
-import UserInput from "./components/UserInput";
+import ModalContainer from "./components/ModalContainer";
+import Recipes from "./components/Recipes";
 
 function App() {
   return (
     <div>
-      <UserInput />
+      <ModalContainer />
+      <Recipes />
     </div>
   );
 }
