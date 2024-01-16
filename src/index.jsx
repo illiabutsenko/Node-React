@@ -1,12 +1,13 @@
 import ReactDOM from "react-dom/client";
-import ModalContainer from "./components/ModalContainer";
-import Recipes from "./components/Recipes";
+import ThemeContext from "./context/theme";
+import Toolbar from "./components/Toolbar";
 
 function App() {
   return (
     <div>
-      <ModalContainer />
-      <Recipes />
+      <ThemeContext.Provider value="light">
+        <Toolbar />
+      </ThemeContext.Provider>
     </div>
   );
 }
