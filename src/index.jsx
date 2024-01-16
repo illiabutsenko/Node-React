@@ -1,13 +1,10 @@
 import ReactDOM from "react-dom/client";
-import ThemeContext from "./context/theme";
-import Toolbar from "./components/Toolbar";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <div>
-      <ThemeContext.Provider value="light">
-        <Toolbar />
-      </ThemeContext.Provider>
+      <Counter />
     </div>
   );
 }
