@@ -1,10 +1,18 @@
-function UserProfile({ user }) {
+import { useContext } from "react";
+import UserContext from "../context/user";
+
+// function UserProfile({ user }) {
+function UserProfile() {
+  const user = useContext(UserContext);
   return (
     <div>
       {user.isLoggedIn ? (
-        <div style={{ color: "#453999" }}>Профіль користувача: {user.name}</div>
+        <div>
+          <div style={{ color: "#453999" }}>User profile: {user.name}</div>
+          <div style={{ color: "#453999" }}>Email: {user.email}</div>
+        </div>
       ) : (
-        <div style={{ color: "DarkRed" }}>Користувач не увійшов у систему</div>
+        <div style={{ color: "DarkRed" }}>User is not logged in</div>
       )}
     </div>
   );
