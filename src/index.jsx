@@ -2,7 +2,6 @@ import ReactDOM from "react-dom/client";
 import { useState } from "react";
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
-import Counter from "./components/Counter";
 import Joke from "./components/Joke";
 import Posts from "./components/Posts";
 import Toolbar from "./components/Toolbar";
@@ -12,6 +11,7 @@ import UserProfile from "./components/UserProfile";
 import WelcomeComponent from "./components/WelcomeComponent";
 import store from "./store";
 import { CounterRedux } from "./components/CounterRedux";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const [user, setUser] = useState({
@@ -25,37 +25,39 @@ function App() {
   });
   return (
     <div>
-      <Provider store={store}>
-        <UserContext.Provider value={user}>
-          <WelcomeComponent user={user} />
-          <UserProfile user={user} />
-          <BrowserRouter>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/counter">Counter</Link>
-                </li>
-                <li>
-                  <Link to="/joke">Joke</Link>
-                </li>
-                <li>
-                  <Link to="/posts">Posts</Link>
-                </li>
-                <li>
-                  <Link to="/toolbar">Toolbar</Link>
-                </li>
-              </ul>
-            </nav>
-            <Routes>
-              <Route path="/counter" element={<CounterRedux />} />
-              <Route path="/joke" element={<Joke />} />
-              <Route path="/posts" element={<Posts />} />
-              <Route path="/toolbar" element={<Toolbar />} />
-            </Routes>
-          </BrowserRouter>
-          <Footer />
-        </UserContext.Provider>
-      </Provider>
+      <ErrorBoundary>
+        <Provider>
+          <UserContext.Provider value={user}>
+            <WelcomeComponent user={user} />
+            <UserProfile user={user} />
+            <BrowserRouter>
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/counter">Counter</Link>
+                  </li>
+                  <li>
+                    <Link to="/joke">Joke</Link>
+                  </li>
+                  <li>
+                    <Link to="/posts">Posts</Link>
+                  </li>
+                  <li>
+                    <Link to="/toolbar">Toolbar</Link>
+                  </li>
+                </ul>
+              </nav>
+              <Routes>
+                <Route path="/counter" element={<CounterRedux />} />
+                <Route path="/joke" element={<Joke />} />
+                <Route path="/posts" element={<Posts />} />
+                <Route path="/toolbar" element={<Toolbar />} />
+              </Routes>
+            </BrowserRouter>
+            <Footer />
+          </UserContext.Provider>
+        </Provider>
+      </ErrorBoundary>
     </div>
   );
 }
