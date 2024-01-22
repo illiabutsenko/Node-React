@@ -2,16 +2,18 @@ import ReactDOM from "react-dom/client";
 import { useState } from "react";
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
-import Joke from "./components/Joke";
-import Posts from "./components/Posts";
-import Toolbar from "./components/Toolbar";
 import UserContext from "./context/user";
-import Footer from "./components/Footer";
 import UserProfile from "./components/UserProfile";
 import WelcomeComponent from "./components/WelcomeComponent";
 import store from "./store";
-import { CounterRedux } from "./components/CounterRedux";
 import ErrorBoundary from "./components/ErrorBoundary";
+import {
+  FooterWithLoadingIndicator as Footer,
+  CounterWithLoadingIndicator as CounterRedux,
+  JokeWithLoadingIndicator as Joke,
+  PostsWithLoadingIndicator as Posts,
+  ToolbarWithLoadingIndicator as Toolbar,
+} from "./components/WithLoadingIndicatorComponents";
 
 function App() {
   const [user, setUser] = useState({
@@ -26,7 +28,7 @@ function App() {
   return (
     <div>
       <ErrorBoundary>
-        <Provider>
+        <Provider store={store}>
           <UserContext.Provider value={user}>
             <WelcomeComponent user={user} />
             <UserProfile user={user} />
