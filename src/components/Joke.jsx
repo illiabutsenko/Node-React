@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import useFetch from "../hooks/useFetch";
 import UserContext from "../context/user";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function Joke() {
   const user = useContext(UserContext);
@@ -8,7 +9,7 @@ function Joke() {
     "https://api.chucknorris.io/jokes/random"
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <ClipLoader color="#00bfff" />;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
