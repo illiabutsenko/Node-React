@@ -1,6 +1,6 @@
 import React from "react";
 import Display from "./Display";
-import Button from "./Button";
+import { Button } from "./Button/Button";
 
 export default class CounterOld extends React.Component {
   constructor(props) {
@@ -20,8 +20,8 @@ export default class CounterOld extends React.Component {
     return (
       <div>
         <Display count={this.state.count} />
-        <button onClick={this.incrementCount}>Increment</button>
-        <button onClick={this.decrementCount}>Decrement</button>
+        <Button onClick={this.incrementCount}>Increment</Button>
+        <Button primary onClick={this.decrementCount}>Decrement</Button>
       </div>
     );
   }
