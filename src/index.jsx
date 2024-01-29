@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom/client";
-import Button from "./components/Button";
+import ButtonComponent from "./components/Button/Button";
 
 function App() {
   return (
     <div>
-      <Button>Натисніть мене</Button>
+      <ButtonComponent />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Display from "./Display";
+import Button from "./Button";
 
 export default class CounterOld extends React.Component {
   constructor(props) {
