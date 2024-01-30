@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import CounterOld from "./components/CounterOld";
-import { Button, ButtonStyled, Button2 } from "./components/Button/Button";
+import { Button, ButtonStyled, Button2, Paragraph } from "./components/Button/Button";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Button>Button</Button>
       <ButtonStyled primary>ButtonStyled</ButtonStyled><br></br><br></br>
       <Button2 dangerButton>Button2</Button2>
+      <Paragraph />
     </div>
   );
 }

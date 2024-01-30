@@ -31,4 +31,9 @@ function Button2(props) {
     </button>
   );
 }
-export { Button, ButtonStyled, Button2 };
+
+function Paragraph() {
+  return <p className={styles2.myElement}>Paragraph</p>;
+}
+
+export { Button, ButtonStyled, Button2, Paragraph };
