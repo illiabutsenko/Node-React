@@ -1,7 +1,7 @@
 import { useContext } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 import useFetch from "../hooks/useFetch";
 import UserContext from "../context/user";
-import ClipLoader from "react-spinners/ClipLoader";
 
 function Joke() {
   const user = useContext(UserContext);
