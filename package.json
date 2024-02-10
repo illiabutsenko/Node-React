@@ -5,14 +5,14 @@
   "description": "Learn node",
   "main": "dist/bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/bundle.js",
     "dev": "rollup -c -w",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write src",
     "storybook": "storybook dev",
     "tw": "npx tailwindcss -i ./src/index.css -o ./dist/bundle.css --watch",
-    "bundle": "rollup -c && npx tailwindcss -i ./src/index.css -o ./dist/bundle.css"
+    "bundle": "rollup -c && npx tailwindcss -i ./src/index.css -o ./dist/bundle.css",
+    "test": "jest"
   },
   "author": "Illia Butsenko",
   "license": "ISC",
