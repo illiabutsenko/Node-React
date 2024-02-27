@@ -1,10 +1,7 @@
-import { useContext } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
 import useFetch from "../hooks/useFetch";
-import UserContext from "../context/user";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function Joke() {
-  const user = useContext(UserContext);
   const { data, loading, error } = useFetch(
     "https://api.chucknorris.io/jokes/random"
   );
@@ -14,7 +11,6 @@ function Joke() {
 
   return (
     <div>
-      <p>Hi, {user.name}</p>
       <p>Joke: {data.value}</p>
     </div>
   );
