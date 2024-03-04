@@ -15,9 +15,14 @@
     "test": "jest"
   },
   "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["html"],
     "moduleNameMapper": {
       "\\.module\\.css$": "<rootDir>/__mocks__/cssModuleMock.js"
     },
+    "testPathIgnorePatterns": [
+        "<rootDir>/tests/"
+    ],
     "testEnvironment": "jsdom"
   },
   "author": "Illia Butsenko",
